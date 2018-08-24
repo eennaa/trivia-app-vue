@@ -1,9 +1,14 @@
-import axios from 'axios'
+const Chuck  = require('chucknorris-io')
+      
 
-export default class Chuck {
+export default class ChuckService {
     constructor() {
-        axios.defaults.baseURL ='http://localhost:?'
+        this.client = new Chuck();
+    }
+
+    getRandomJoke() {
+        this.client.getRandomJoke('dev')
     }
 }
 
-export const chuckService = new Chuck()
+export const chuckService = new ChuckService()
